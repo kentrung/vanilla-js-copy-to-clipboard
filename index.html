@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vanilla JS Project: Copy to clipboard</title>
+  <!-- bootstrap css 4.5.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="my-5 text-center">Copy to clipboard</h1>
+    <div>API Key</div>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" value="kentrung-p90fd5JSy5M0Kdw3tCFGkUJ_8yC1MoXSs9DE" readonly>
+      <div class="input-group-append">
+        <button class="btn btn-primary">Copy</button>
+      </div>
+    </div>
+    <div>Test</div>
+    <input type="text" class="form-control">
+  </div>
+  <script> 
+    const ipnElement = document.querySelector('input')
+    const btnElement = document.querySelector('button')
+
+    btnElement.addEventListener('click', function() {
+      btnElement.innerText = 'Copied!' // step 3
+      ipnElement.select()              // step 4
+      document.execCommand('copy')     // step 5
+    })
+   </script>
+</body>
+</html>
